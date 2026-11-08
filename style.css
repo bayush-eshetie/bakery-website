@@ -1,0 +1,848 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap');
+
+:root {
+    --blue: #173b8f;
+    --dark-blue: #10245c;
+    --mid-blue: #2857b7;
+    --light-blue: #f2f5fc;
+    --pink: #e7edff;
+    --gold: #c9a957;
+    --white: #ffffff;
+    --text: #24344c;
+    --muted: #69788b;
+    --cream: #ffffff;
+    --shadow: 0 12px 35px rgba(15, 47, 88, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+    padding: 15px 6%;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #e6ebf5;
+    box-shadow: 0 4px 20px rgba(7, 28, 62, 0.04);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    display: inline-grid;
+    place-items: center;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.navbar nav a {
+    color: #52647c;
+    font-size: 0.91rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+    color: var(--mid-blue);
+}
+
+.header-button {
+    padding: 11px 20px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.25s;
+}
+
+.header-button:hover {
+    background: var(--mid-blue);
+    transform: translateY(-2px);
+}
+
+/* HERO BANNER */
+
+.banner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 25px;
+    min-height: 590px;
+    padding: 65px 7%;
+    color: var(--dark-blue);
+    background: linear-gradient(120deg, #ffffff 20%, #f5f7fc 100%);
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 480px;
+    height: 480px;
+    right: -100px;
+    top: -150px;
+    border: 1px solid rgba(23, 59, 143, 0.12);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 45px rgba(23, 59, 143, 0.025),
+        0 0 0 90px rgba(23, 59, 143, 0.025);
+}
+
+.banner-decoration {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    background: rgba(23, 59, 143, 0.04);
+}
+
+.decoration-one {
+    width: 230px;
+    height: 230px;
+    bottom: -110px;
+    left: 25%;
+}
+
+.decoration-two {
+    width: 120px;
+    height: 120px;
+    top: 45px;
+    left: 45%;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 4;
+    max-width: 620px;
+    animation: bannerReveal 0.9s ease both;
+}
+
+.banner-label {
+    color: var(--mid-blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 20px;
+}
+
+.banner-content h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2.8rem, 5.1vw, 4.7rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: 1px;
+}
+
+.banner-content h1 span {
+    display: block;
+    margin-top: 15px;
+    color: var(--blue);
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.25rem, 2.4vw, 2.1rem);
+    line-height: 1.35;
+    letter-spacing: 1.5px;
+}
+
+.gold-line {
+    width: 90px;
+    height: 4px;
+    margin: 24px 0;
+    border-radius: 10px;
+    background: var(--gold);
+}
+
+.banner-content h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    line-height: 1.4;
+}
+
+.banner-content h2 span {
+    display: block;
+    color: var(--mid-blue);
+}
+
+.banner-description {
+    max-width: 480px;
+    color: #66738d;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.banner-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 25px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 22px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    font-weight: 800;
+    text-align: center;
+    transition: transform 0.25s, background 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-white {
+    color: white;
+    background: var(--blue);
+}
+
+.button-white:hover {
+    background: var(--mid-blue);
+}
+
+.button-outline {
+    border-color: rgba(23, 59, 143, 0.35);
+    color: var(--blue);
+    background: transparent;
+}
+
+.button-outline:hover {
+    color: white;
+    background: var(--blue);
+}
+
+.button-blue {
+    color: white;
+    background: var(--blue);
+}
+
+.button-blue:hover {
+    background: var(--mid-blue);
+}
+
+.banner-details {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 28px;
+    color: #485875;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.banner-details a:hover {
+    color: var(--mid-blue);
+}
+
+/* BRAND LOGO CARD */
+
+.banner-gallery {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(23, 59, 143, 0.1);
+    filter: blur(5px);
+}
+
+.brand-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 390px);
+    padding: 17px;
+    border: 1px solid rgba(23, 59, 143, 0.12);
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 24px 70px rgba(16, 36, 92, 0.16);
+    text-align: center;
+    transform: rotate(1deg);
+}
+
+.brand-card-image {
+    height: 270px;
+    overflow: hidden;
+    border: 1px solid #e7ebf3;
+    border-radius: 12px;
+    background: white;
+}
+
+.brand-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+}
+
+.brand-card > p {
+    margin-top: 12px;
+    color: var(--blue);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.brand-card > p span {
+    display: block;
+    color: var(--muted);
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* FEATURES */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 32px 8%;
+    background: white;
+    border-bottom: 1px solid #e6ebf5;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+
+.feature > span {
+    font-size: 2rem;
+}
+
+.feature h3 {
+    color: var(--blue);
+    font-size: 1rem;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* SECTION HEADINGS */
+
+.cakes-section {
+    padding: 85px 7%;
+    background: var(--cream);
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 43px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 13px;
+    color: var(--mid-blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    color: var(--blue);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+/* CAKE CARDS */
+
+.cake-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 27px;
+}
+
+.cake-card {
+    overflow: hidden;
+    border: 1px solid #e5edf7;
+    border-radius: 16px;
+    background: white;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cake-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(15, 47, 88, 0.15);
+}
+
+.cake-image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: var(--light-blue);
+}
+
+.cake-image img {
+    height: 250px;
+    transition: transform 0.4s;
+}
+
+.cake-image:hover img {
+    transform: scale(1.07);
+}
+
+.view-label {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 7px 13px;
+    border-radius: 4px;
+    background: white;
+    color: var(--blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.cake-info {
+    padding: 23px;
+}
+
+.cake-info h3 {
+    margin-bottom: 10px;
+    color: var(--blue);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.3rem;
+}
+
+.cake-info p {
+    min-height: 50px;
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 0.91rem;
+}
+
+.cake-order {
+    display: inline-block;
+    color: var(--mid-blue);
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.cake-order:hover {
+    color: var(--dark-blue);
+}
+
+/* CSS-ONLY IMAGE VIEWER */
+
+.image-viewer {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 35px 20px;
+    overflow-y: auto;
+    background: rgba(4, 17, 38, 0.96);
+    color: white;
+    text-align: center;
+}
+
+.image-viewer:target {
+    display: flex;
+}
+
+.image-viewer > img {
+    width: auto;
+    max-width: min(90vw, 720px);
+    max-height: 65vh;
+    object-fit: contain;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.image-viewer h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.8rem;
+}
+
+.viewer-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.viewer-next {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: white;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.viewer-close:hover,
+.viewer-next:hover {
+    color: var(--gold);
+}
+
+/* ABOUT */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    align-items: center;
+    gap: 65px;
+    padding: 80px 9%;
+    background: var(--light-blue);
+}
+
+.about-photo img {
+    height: 400px;
+    border: 7px solid white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.about-content > p:not(.eyebrow) {
+    margin-bottom: 25px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+/* CONTACT */
+
+.contact-section {
+    padding: 85px 7%;
+    background: white;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 23px;
+    max-width: 1050px;
+    margin: 0 auto 35px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    border: 1px solid #e4edf8;
+    border-radius: 12px;
+    background: #fbfdff;
+    box-shadow: var(--shadow);
+}
+
+.contact-card > span {
+    margin-bottom: 12px;
+    font-size: 2rem;
+}
+
+.contact-card h3 {
+    margin-bottom: 8px;
+    color: var(--blue);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.3rem;
+}
+
+.contact-card p {
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.contact-card a,
+.contact-card strong {
+    color: var(--mid-blue);
+    font-size: 0.91rem;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    color: var(--dark-blue);
+}
+
+.whatsapp-button {
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 38px 20px;
+    background: #f3f6fc;
+    color: #52617b;
+    text-align: center;
+}
+
+.footer .logo {
+    margin-bottom: 8px;
+    color: var(--blue);
+}
+
+.footer p {
+    margin-top: 7px;
+    font-size: 0.9rem;
+}
+
+.footer-copy {
+    margin-top: 20px !important;
+    color: #71809a;
+    font-size: 0.8rem !important;
+}
+
+/* ANIMATION */
+
+@keyframes bannerReveal {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLETS */
+
+@media (max-width: 950px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 4%;
+    }
+
+    .navbar nav {
+        gap: 17px;
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+        padding: 55px 7%;
+    }
+
+    .banner-content {
+        max-width: 700px;
+    }
+
+    .banner-gallery {
+        min-height: 380px;
+    }
+
+    .cake-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-section {
+        gap: 35px;
+        padding: 60px 6%;
+    }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 600px) {
+    .navbar {
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 1.05rem;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .navbar nav a {
+        font-size: 0.82rem;
+    }
+
+    .header-button {
+        padding: 9px 12px;
+        font-size: 0.82rem;
+    }
+
+    .banner {
+        padding: 45px 6%;
+    }
+
+    .banner-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .banner-content h1 span {
+        font-size: 1.3rem;
+    }
+
+    .banner-label {
+        font-size: 0.68rem;
+        letter-spacing: 1.5px;
+    }
+
+    .banner-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .banner-description {
+        font-size: 0.9rem;
+    }
+
+    .banner-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .banner-gallery {
+        min-height: 320px;
+    }
+
+    .brand-card {
+        width: min(100%, 340px);
+    }
+
+    .brand-card-image {
+        height: 230px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 30px 6%;
+    }
+
+    .feature {
+        justify-content: flex-start;
+    }
+
+    .cakes-section,
+    .contact-section {
+        padding: 60px 6%;
+    }
+
+    .cake-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cake-image img {
+        height: 260px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        padding: 50px 6%;
+    }
+
+    .about-photo img {
+        height: 300px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-viewer > img {
+        max-width: 94vw;
+        max-height: 55vh;
+    }
+
+    .viewer-next {
+        position: static;
+        order: 2;
+    }
+
+    .image-viewer h2 {
+        font-size: 1.4rem;
+    }
+}
